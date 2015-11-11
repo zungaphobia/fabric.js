@@ -1,8 +1,9 @@
+/* @flow weak */
 (function(global) {
 
   'use strict';
 
-  var fabric = global.fabric || (global.fabric = { }),
+  var fabric /*: Object */ = global.fabric || (global.fabric = { }),
       pi = Math.PI,
       extend = fabric.util.object.extend;
 
@@ -99,7 +100,7 @@
      */
     toSVG: function(reviver) {
       var markup = this._createBaseSVGMarkup(), x = 0, y = 0,
-      angle = (this.endAngle - this.startAngle) % ( 2 * pi);
+          angle = (this.endAngle - this.startAngle) % ( 2 * pi);
 
       if (angle === 0) {
         if (this.group && this.group.type === 'path-group') {

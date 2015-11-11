@@ -1,3 +1,4 @@
+/* @flow weak */
 (function(global) {
 
   'use strict';
@@ -538,7 +539,7 @@
     _parsePath: function() {
       var result = [ ],
           coords = [ ],
-          currentPath,
+          currentPath = '',
           parsed,
           re = /([-+]?((\d+\.\d+)|((\d+)|(\.\d+)))(?:e[-+]?\d+)?)/ig,
           match,
@@ -589,7 +590,7 @@
       var aX = [],
           aY = [],
           current, // current instruction
-          previous = null,
+          previous = [ ],
           subpathStartX = 0,
           subpathStartY = 0,
           x = 0, // current x

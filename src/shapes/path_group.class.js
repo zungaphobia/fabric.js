@@ -1,3 +1,4 @@
+/* @flow weak */
 (function(global) {
 
   'use strict';

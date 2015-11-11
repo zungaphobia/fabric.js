@@ -1,3 +1,4 @@
+/* @flow weak */
 (function(global) {
 
   'use strict';
@@ -1357,14 +1358,15 @@
     setGradient: function(property, options) {
       options || (options = { });
 
-      var gradient = { colorStops: [] };
-
-      gradient.type = options.type || (options.r1 || options.r2 ? 'radial' : 'linear');
-      gradient.coords = {
-        x1: options.x1,
-        y1: options.y1,
-        x2: options.x2,
-        y2: options.y2
+      var gradient = {
+        colorStops: [],
+        type: options.type || (options.r1 || options.r2 ? 'radial' : 'linear'),
+        coords: {
+          x1: options.x1,
+          y1: options.y1,
+          x2: options.x2,
+          y2: options.y2
+        }
       };
 
       if (options.r1 || options.r2) {
